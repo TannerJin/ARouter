@@ -1,7 +1,9 @@
 # ARouter
 Swift Router
 
-Inspired from [CTMediator](https://github.com/casatwy/CTMediator) and Based On `RunTime of AnyObject`
+Inspired from [CTMediator](https://github.com/casatwy/CTMediator) 
+
+Different with [SRouter](https://github.com/TannerJin/SRouter), It's Based On `RunTime of AnyObject`
 
 Usage
 
@@ -17,7 +19,7 @@ extension ARouter {
     
     @objc func isLoginSuccess(param1: [String: Any], param2: Int) -> Bool {
         ...
-        return true
+        return param2 > 007
     }
  }   
 
