@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:ARouter/ARouter.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UserInfoModule/UserInfoModule.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LoginRegisterModule/LoginRegisterModule.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ARouterDemo.xcodeproj">
+   </FileRef>
+</Workspace>
