@@ -15,4 +15,6 @@ class ARouterDemoModuleUsedRouteTable {
     @objc func enterRegister(controller: UIViewController) {}
     
     @objc func undefineSelect(param1: String, param2: Int) {}
+    
+    @objc func undefineSelect(param1: Int) {}
 }

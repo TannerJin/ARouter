@@ -18,7 +18,7 @@ public class ARouter: NSObject {
     
     public override func forwardingTarget(for aSelector: Selector!) -> Any? {
         if class_getInstanceMethod(ARouterForwarding.self, aSelector) == nil {
-            let block: @convention(block) (AnyObject, AnyObject)->AnyObject? = { (objc, _) in
+            let block: @convention(block) (AnyObject)->AnyObject? = { (objc) in
                 print("[ARouter]: SEL(\(NSStringFromSelector(aSelector))) had been forwardingTarget to \(type(of: objc))")
                 return nil
             }

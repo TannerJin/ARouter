@@ -28,8 +28,8 @@ class ViewController: UIViewController {
     
     // Unrecognized Selector Sent to Instance ARouter
     @IBAction func UnrecognizedSelectorClick(_ sender: UIButton) {
-        ARouter.default.undefineSelect(param1: "Unrecognized Selector Sent to ARouter", param2: 3)
-     // ARouter.default.undefineSelect?(param1: "Unrecognized Selector Sent to ARouter", param2: 3)   use this way
+        ARouter.default.undefineSelect(param1: "Unrecognized Selector Sent to ARouter", param2: 2)
+        ARouter.default.undefineSelect?(param1: 1)   // 加了"?"(可选调用), 不会进入消息转发流程
     }
 }
 
