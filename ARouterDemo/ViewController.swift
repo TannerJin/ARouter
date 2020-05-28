@@ -23,12 +23,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func registerClick(_ sender: UIButton) {
-        ARouter.default.enterRegister(controller: self)
+        ARouter.default.enterRegister?(controller: self)
     }
     
-    // Unrecognized Selector Sent to Instance ARouter(如果去掉"?", 就会闪退)
+    // Unrecognized Selector Sent to Instance ARouter
     @IBAction func UnrecognizedSelectorClick(_ sender: UIButton) {
-        ARouter.default.undefineSelect?(param1: "Unrecognized Selector Sent to ARouter", param2: 3)
+        ARouter.default.undefineSelect(param1: "Unrecognized Selector Sent to ARouter", param2: 3)
+     // ARouter.default.undefineSelect?(param1: "Unrecognized Selector Sent to ARouter", param2: 3)   Suggestion
     }
 }
 
