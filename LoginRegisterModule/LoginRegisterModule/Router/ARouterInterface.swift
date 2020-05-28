@@ -20,4 +20,8 @@ extension ARouter {
         let navi = UINavigationController(rootViewController: RegisterViewController())
         controller.present(navi, animated: true, completion: nil)
     }
+    
+    @objc func isLoginSuccess(param1: Int, param2: [String: Any]?) -> Bool {
+        return param1 > 965
+    }
 }

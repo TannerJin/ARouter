@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gme-k5-TmX">
-                                <rect key="frame" x="178.5" y="395" width="57" height="40"/>
+                                <rect key="frame" x="178.5" y="355" width="57" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57" id="iX1-IF-D85"/>
                                     <constraint firstAttribute="height" constant="40" id="seP-Sp-ig2"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUQ-A8-XEo">
-                                <rect key="frame" x="166" y="455" width="82" height="40"/>
+                                <rect key="frame" x="166" y="425" width="82" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ppA-uZ-Hdy"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crf-cF-Aeg">
-                                <rect key="frame" x="94" y="515" width="226" height="40"/>
+                                <rect key="frame" x="94" y="555" width="226" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GLU-Qh-Tnt"/>
                                 </constraints>
@@ -50,15 +50,28 @@
                                     <action selector="UnrecognizedSelectorClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uy7-YT-rj7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTR-MF-r59">
+                                <rect key="frame" x="171" y="485" width="72" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cfk-ZL-Oxq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="isLogin"/>
+                                <connections>
+                                    <action selector="loginStatuClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fTL-Pw-yce"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pUQ-A8-XEo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CuW-VW-QJY"/>
+                            <constraint firstItem="pUQ-A8-XEo" firstAttribute="top" secondItem="gme-k5-TmX" secondAttribute="bottom" constant="30" id="KOV-ZO-4MU"/>
+                            <constraint firstItem="GTR-MF-r59" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Y7v-pA-OCE"/>
                             <constraint firstItem="crf-cF-Aeg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="a0p-UY-DJu"/>
-                            <constraint firstItem="pUQ-A8-XEo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cDD-zL-FeF"/>
+                            <constraint firstItem="pUQ-A8-XEo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-30" id="cDD-zL-FeF"/>
+                            <constraint firstItem="GTR-MF-r59" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="30" id="kzO-bg-rzB"/>
                             <constraint firstItem="gme-k5-TmX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ngj-He-i6C"/>
-                            <constraint firstItem="gme-k5-TmX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-60" id="qw0-vm-eIu"/>
-                            <constraint firstItem="crf-cF-Aeg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="60" id="zGb-kX-1xo"/>
+                            <constraint firstItem="crf-cF-Aeg" firstAttribute="top" secondItem="GTR-MF-r59" secondAttribute="bottom" constant="30" id="zhE-uw-Bkq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

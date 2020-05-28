@@ -17,4 +17,9 @@ class ARouterDemoModuleUsedRouteTable {
     @objc func undefineSelect(param1: String, param2: Int) {}
     
     @objc func undefineSelect(param1: Int) {}
+    
+    @objc func isLoginSuccess(param1: Int, param2: [String: Any]?) -> Bool {
+        assert(false, "运行时不会走这")
+        return false
+    }
 }

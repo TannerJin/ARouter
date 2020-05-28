@@ -26,10 +26,16 @@ class ViewController: UIViewController {
         ARouter.default.enterRegister?(controller: self)
     }
     
+    @IBAction func loginStatuClick(_ sender: UIButton) {
+        if let isLogin = ARouter.default.isLoginSuccess?(param1: 996, param2: nil) {
+            print(isLogin ? "登录成功":"登录失败")
+        }
+    }
+    
     // Unrecognized Selector Sent to Instance ARouter
     @IBAction func UnrecognizedSelectorClick(_ sender: UIButton) {
-        ARouter.default.undefineSelect(param1: "Unrecognized Selector Sent to ARouter", param2: 2)
-        ARouter.default.undefineSelect?(param1: 1)   // 加了"?"(可选调用), 不会进入消息转发流程
+        ARouter.default.undefineSelect(param1: "ARouter没有实现该SEL，这里会进入消息转发", param2: 2)
+        ARouter.default.undefineSelect?(param1: 1)   // 由于这里加了"?"(可选调用), 不会进入消息转发流程
     }
 }
 
