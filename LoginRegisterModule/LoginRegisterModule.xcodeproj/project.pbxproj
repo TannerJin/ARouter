@@ -14,7 +14,7 @@
 		A9F86670247EA62500402672 /* ARouterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8666F247EA62500402672 /* ARouterInterface.swift */; };
 		A9F86673247EA63600402672 /* ARouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F86672247EA63600402672 /* ARouter.framework */; };
 		A9F86674247EA63600402672 /* ARouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9F86672247EA63600402672 /* ARouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A9F8668A247EAA1B00402672 /* ARouterLoginRegisterUsedSEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86689247EAA1B00402672 /* ARouterLoginRegisterUsedSEL.swift */; };
+		A9F8668A247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86689247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +40,7 @@
 		A9F8666D247EA5FF00402672 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A9F8666F247EA62500402672 /* ARouterInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARouterInterface.swift; sourceTree = "<group>"; };
 		A9F86672247EA63600402672 /* ARouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ARouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9F86689247EAA1B00402672 /* ARouterLoginRegisterUsedSEL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARouterLoginRegisterUsedSEL.swift; sourceTree = "<group>"; };
+		A9F86689247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterModuleUsedRouteTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				A9F8666F247EA62500402672 /* ARouterInterface.swift */,
-				A9F86689247EAA1B00402672 /* ARouterLoginRegisterUsedSEL.swift */,
+				A9F86689247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			files = (
 				A925EEC2247EC4900076EA15 /* LoginViewController.swift in Sources */,
 				A9F8666E247EA5FF00402672 /* RegisterViewController.swift in Sources */,
-				A9F8668A247EAA1B00402672 /* ARouterLoginRegisterUsedSEL.swift in Sources */,
+				A9F8668A247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift in Sources */,
 				A9F86670247EA62500402672 /* ARouterInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

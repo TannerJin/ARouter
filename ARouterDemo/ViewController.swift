@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func registerClick(_ sender: UIButton) {
-        ARouter.default.enterRegister?(controller: self)
+        ARouter.default.enterRegister(controller: self)
     }
     
     // Unrecognized Selector Sent to Instance ARouter(如果去掉"?", 就会闪退)

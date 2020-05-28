@@ -14,7 +14,7 @@
 		A9F8661D247EA45000402672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9F8661B247EA45000402672 /* LaunchScreen.storyboard */; };
 		A9F86678247EA6B100402672 /* ARouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F86677247EA6B100402672 /* ARouter.framework */; };
 		A9F86679247EA6B100402672 /* ARouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9F86677247EA6B100402672 /* ARouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A9F8667C247EA6FC00402672 /* ARouterDemoUsedSEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8667B247EA6FC00402672 /* ARouterDemoUsedSEL.swift */; };
+		A9F8667C247EA6FC00402672 /* ARouterDemoModuleUsedRouteTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8667B247EA6FC00402672 /* ARouterDemoModuleUsedRouteTable.swift */; };
 		A9F8667F247EA86F00402672 /* LoginRegisterModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F8667D247EA86F00402672 /* LoginRegisterModule.framework */; };
 		A9F86680247EA86F00402672 /* LoginRegisterModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9F8667D247EA86F00402672 /* LoginRegisterModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9F86681247EA86F00402672 /* UserInfoModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F8667E247EA86F00402672 /* UserInfoModule.framework */; };
@@ -46,7 +46,7 @@
 		A9F8661C247EA45000402672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9F8661E247EA45000402672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9F86677247EA6B100402672 /* ARouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ARouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9F8667B247EA6FC00402672 /* ARouterDemoUsedSEL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARouterDemoUsedSEL.swift; sourceTree = "<group>"; };
+		A9F8667B247EA6FC00402672 /* ARouterDemoModuleUsedRouteTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARouterDemoModuleUsedRouteTable.swift; sourceTree = "<group>"; };
 		A9F8667D247EA86F00402672 /* LoginRegisterModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoginRegisterModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F8667E247EA86F00402672 /* UserInfoModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserInfoModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,7 +91,7 @@
 				A9F86619247EA45000402672 /* Assets.xcassets */,
 				A9F8661B247EA45000402672 /* LaunchScreen.storyboard */,
 				A9F8661E247EA45000402672 /* Info.plist */,
-				A9F8667B247EA6FC00402672 /* ARouterDemoUsedSEL.swift */,
+				A9F8667B247EA6FC00402672 /* ARouterDemoModuleUsedRouteTable.swift */,
 			);
 			path = ARouterDemo;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 			files = (
 				A9F86615247EA45000402672 /* ViewController.swift in Sources */,
 				A9F86611247EA45000402672 /* AppDelegate.swift in Sources */,
-				A9F8667C247EA6FC00402672 /* ARouterDemoUsedSEL.swift in Sources */,
+				A9F8667C247EA6FC00402672 /* ARouterDemoModuleUsedRouteTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

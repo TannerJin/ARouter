@@ -8,8 +8,8 @@
 
 import UIKit
 
-// 定义该模块用到的Selector, 保证过编译而已。运行时并不会走到这
-class ARouterDemoUsedSEL {
+// 定义该模块用到的SEL, 保证过编译而已。运行时并不会走到这 (可以理解为编译注册)
+class ARouterDemoModuleUsedRouteTable {
     @objc func enterLogin(navi: UINavigationController) {}
     
     @objc func enterRegister(controller: UIViewController) {}

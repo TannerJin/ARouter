@@ -9,6 +9,9 @@
 import Foundation
 
 public class ARouter: NSObject {
+    /*
+        缓存策略: RunTime中CacheTable已经做了
+     */
     public static let `default`: AnyObject = ARouter()
     
     /*

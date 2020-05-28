@@ -9,7 +9,7 @@
 import UIKit
 import ARouter
 
-// 该模块的路由接口
+// 该模块对外暴露的路由接口
 extension ARouter {
     @objc func enterLogin(navi: UINavigationController) {
         let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
