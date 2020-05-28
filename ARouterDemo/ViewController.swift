@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     // Unrecognized Selector Sent to Instance ARouter
     @IBAction func UnrecognizedSelectorClick(_ sender: UIButton) {
         ARouter.default.undefineSelect(param1: "Unrecognized Selector Sent to ARouter", param2: 3)
-     // ARouter.default.undefineSelect?(param1: "Unrecognized Selector Sent to ARouter", param2: 3)   Suggestion
+     // ARouter.default.undefineSelect?(param1: "Unrecognized Selector Sent to ARouter", param2: 3)   use this way
     }
 }
 
