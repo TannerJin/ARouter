@@ -32,9 +32,14 @@ class ViewController: UIViewController {
         }
     }
     
-    // Unrecognized Selector Sent to Instance ARouter
+    // 404处理
     @IBAction func UnrecognizedSelectorClick(_ sender: UIButton) {
-        ARouter.default.undefineSelect(param1: "ARouter没有实现该SEL，这里会进入消息转发", param2: 2)
+        ARouter.default.setHandleNotFound(for: #selector(ARouterDemoModuleUsedRouteTable.undefineSelect(param1:param2:))) { (_) -> Unmanaged<AnyObject>? in
+            print("消息转发到这里，可以自己处理404")
+            return nil
+        }.undefineSelect(param1: "", param2: 2)
+                
+        print("\n可选调用:")
         ARouter.default.undefineSelect?(param1: 1)   // 由于这里加了"?"(可选调用), 不会进入消息转发流程
     }
 }

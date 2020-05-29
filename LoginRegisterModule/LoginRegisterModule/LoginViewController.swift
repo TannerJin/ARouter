@@ -8,6 +8,7 @@
 
 import UIKit
 import ARouter
+// 不需要 import UserInfoModule, 完全由RunTime处理
 
 class LoginViewController: UIViewController {
 
