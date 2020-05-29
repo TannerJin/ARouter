@@ -34,13 +34,19 @@ class ViewController: UIViewController {
     
     // 404处理
     @IBAction func UnrecognizedSelectorClick(_ sender: UIButton) {
+        print("1.走默认的404处理:")
+        ARouter.default.undefineSelect(param1: "", param2: 2)
+        
+        
+        print("\n2.走自己的404处理逻辑:")
         ARouter.default.setHandleNotFound(for: #selector(ARouterDemoModuleUsedRouteTable.undefineSelect(param1:param2:))) { (_) -> Unmanaged<AnyObject>? in
             print("消息转发到这里，可以自己处理404")
             return nil
         }.undefineSelect(param1: "", param2: 2)
-                
-        print("\n可选调用:")
-        ARouter.default.undefineSelect?(param1: 1)   // 由于这里加了"?"(可选调用), 不会进入消息转发流程
+         
+        
+        print("\n3.可以选择不处理404")
+        ARouter.default.undefineSelect?(param1: "", param2: 2)   // 由于这里加了"?"(可选调用), 不会处理404(不会进入消息转发流程)
     }
 }
 

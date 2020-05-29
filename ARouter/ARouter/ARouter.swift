@@ -16,13 +16,32 @@ public class ARouter: NSObject {
     
     public static let `default`: AnyObject = ARouter()
     
+    
+    private override init() {}
+    
     public func setDefaultHandleNotFound(_ hander: @escaping ForwordingInvocationBlock) {
         defaultNotFoundHander = hander
     }
     
     @discardableResult
-    @objc public func setHandleNotFound(for aSelector: Selector, _ handler: @escaping ForwordingInvocationBlock) -> AnyObject {
+    @objc public func setHandleNotFound(for aSelector: Selector, _ handler: ForwordingInvocationBlock?) -> AnyObject {
         forwordingInvocations[aSelector] = handler
+        
+        if class_getInstanceMethod(ARouterForwarding.self, aSelector) != nil {
+            var block: ForwordingInvocationBlock
+            if let _block = handler {
+                block = _block
+            } else if let _block = defaultNotFoundHander {
+                block = _block
+            } else {
+                block = { objc in
+                    print("[ARouter]: SEL(\(NSStringFromSelector(aSelector))) had been forwardingTarget to \(type(of: objc))")
+                    return nil
+                }
+            }
+            let imp = imp_implementationWithBlock(block)
+            class_replaceMethod(ARouterForwarding.self, aSelector, imp, nil)
+        }
         return self as AnyObject
     }
 }
