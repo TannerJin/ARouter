@@ -37,4 +37,4 @@ if let result = ARouter.default.isLoginSuccess?(param1: [:], param2: 996), resul
 
 #### note
 
-由于 @objc 限制，参数不支持struct类型。但支持swift标准库的struct数据类型，这是由于他们实现了`_ObjectiveCBridgeable`协议
+由于 @objc 限制，参数默认不支持struct类型。但支持swift标准库的struct数据类型，这是由于他们实现了![`_ObjectiveCBridgeable`协议](https://github.com/TannerJin/SwiftTips/blob/master/AS/AS/main.swift#L50)   
