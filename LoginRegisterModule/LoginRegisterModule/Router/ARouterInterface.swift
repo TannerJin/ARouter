@@ -12,13 +12,11 @@ import ARouter
 // 该模块对外暴露的路由接口
 extension ARouter {
     @objc func enterLogin(navi: UINavigationController) {
-        let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
-        navi.pushViewController(loginController, animated: true)
+        _ = LoginViewController.enterLogin(navi: navi)
     }
     
     @objc func enterRegister(controller: UIViewController) {
-        let navi = UINavigationController(rootViewController: RegisterViewController())
-        controller.present(navi, animated: true, completion: nil)
+        RegisterViewController.enterRegister(controller: controller)
     }
     
     @objc func isLoginSuccess(param1: Int, param2: [String: Any]?) -> Bool {

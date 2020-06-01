@@ -16,3 +16,10 @@ class RegisterViewController: UIViewController {
         self.view.backgroundColor = .red
     }
 }
+
+extension RegisterViewController {
+    class func enterRegister(controller: UIViewController) {
+        let navi = UINavigationController(rootViewController: RegisterViewController())
+        controller.present(navi, animated: true, completion: nil)
+    }
+}

@@ -23,3 +23,11 @@ class LoginViewController: UIViewController {
         ARouter.default.enterUserInfo?(withUserName: "Tanner Jin", navi: self.navigationController)
     }
 }
+
+extension LoginViewController {
+    class func enterLogin(navi: UINavigationController) -> LoginViewController {
+        let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
+        navi.pushViewController(loginController, animated: true)
+        return loginController
+    }
+}

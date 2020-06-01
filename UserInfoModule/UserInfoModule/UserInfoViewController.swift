@@ -14,5 +14,12 @@ class UserInfoViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blue
     }
+}
 
+extension UserInfoViewController {
+    class func enterUserInfo(withUserName userName: String, navi: UINavigationController?) {
+        let userController = UserInfoViewController()
+        userController.title = userName
+        navi?.pushViewController(userController, animated: true)
+    }
 }

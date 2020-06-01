@@ -12,8 +12,6 @@ import ARouter
 // 该模块对外暴露的路由接口
 extension ARouter {
     @objc func enterUserInfo(withUserName userName: String, navi: UINavigationController?) {
-        let userController = UserInfoViewController()
-        userController.title = userName
-        navi?.pushViewController(userController, animated: true)
+        UserInfoViewController.enterUserInfo(withUserName: userName, navi: navi)
     }
 }
