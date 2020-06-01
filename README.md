@@ -9,7 +9,7 @@ Different with [SRouter](https://github.com/TannerJin/SRouter), It's Based On `R
 
 ## Usage
 
-* user case 1
+* __user case 1__
 
 ```swift
 /* At LoginRegister Module
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
 _ = ARouter.shared.performTarget("LoginRegisterModule.LoginViewController")?.enterLogin(navi: navigationController, param1: 1024, param2: "Hello")
 ```
 
-* use case 2
+* __use case 2__
 
 ```swift
 /* At LoginRegister Module
