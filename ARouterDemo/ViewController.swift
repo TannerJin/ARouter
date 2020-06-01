@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginStatuClick(_ sender: UIButton) {
+        // 带返回值
         if let isLogin = ARouter.default.isLoginSuccess?(param1: 996, param2: nil) {
             print(isLogin ? "登录成功":"登录失败")
         }
@@ -36,6 +37,9 @@ class ViewController: UIViewController {
             return arr.map{String($0)}.joined()
         }
         print(str)
+        
+        // 通过字符串调用
+        ARouter.shared.performAction("stringSeletorAction:", with: ["name": "张三"])
     }
     
     // 404处理

@@ -25,6 +25,10 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
+    class func isLoginSuccess(param1: Int, param2: [String: Any]?) -> Bool {
+        return param1 > 1024
+    }
+    
     class func enterLogin(navi: UINavigationController) -> LoginViewController {
         let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
         navi.pushViewController(loginController, animated: true)

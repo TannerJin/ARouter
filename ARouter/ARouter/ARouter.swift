@@ -15,16 +15,53 @@ public class ARouter: NSObject {
     fileprivate var defaultNotFoundHander: ForwordingInvocationBlock?
     
     public static let `default`: AnyObject = ARouter()
-    
+    public static let shared: ARouter = ARouter.default as! ARouter
     
     private override init() {}
     
-    public func setDefaultHandleNotFound(_ hander: @escaping ForwordingInvocationBlock) {
+    @discardableResult
+    public func performAction(_ aSelectorName: String, with params: [String: Any]) -> Unmanaged<AnyObject>? {
+        func foundSeletor(at class: AnyClass) -> Selector? {
+            var count: UInt32 = 0
+            var selector: Selector!
+            if let methods = class_copyMethodList(ARouter.self, &count) {
+                defer {
+                    methods.deallocate()
+                }
+                for i in 0..<count {
+                    selector = method_getName(methods[Int(i)])
+                    let selectorName = NSStringFromSelector(selector)
+                    if selectorName == aSelectorName {
+                        break
+                    }
+                }
+            }
+            return selector
+        }
+    
+        var aSelector = NSSelectorFromString(aSelectorName)
+
+        if let selector = foundSeletor(at: ARouter.self) {
+            aSelector = selector
+        } else if let selector = foundSeletor(at: ARouterForwarding.self) {
+            aSelector = selector
+        }
+        return self.perform(aSelector, with: params)
+    }
+    
+    // TODO
+    public func performUrl() {
+        
+    }
+}
+
+public extension ARouter {
+    func setDefaultHandleNotFound(_ hander: @escaping ForwordingInvocationBlock) {
         defaultNotFoundHander = hander
     }
     
     @discardableResult
-    @objc public func setHandleNotFound(for aSelector: Selector, _ handler: ForwordingInvocationBlock?) -> AnyObject {
+    @objc func setHandleNotFound(for aSelector: Selector, _ handler: ForwordingInvocationBlock?) -> AnyObject {
         forwordingInvocations[aSelector] = handler
         
         if class_getInstanceMethod(ARouterForwarding.self, aSelector) != nil {

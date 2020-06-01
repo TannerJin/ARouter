@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 // 声明该模块用到的SEL(接口), 保证过编译而已 (可以理解为编译注册)
 @objc protocol ARouterDemoModuleUsedRouteTable {
     @objc func enterLogin(navi: UINavigationController)
