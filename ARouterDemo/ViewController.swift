@@ -30,6 +30,12 @@ class ViewController: UIViewController {
         if let isLogin = ARouter.default.isLoginSuccess?(param1: 996, param2: nil) {
             print(isLogin ? "登录成功":"登录失败")
         }
+        
+        // block传参
+        let str = ARouter.default.passBlockParam { (arr) -> String in
+            return arr.map{String($0)}.joined()
+        }
+        print(str)
     }
     
     // 404处理

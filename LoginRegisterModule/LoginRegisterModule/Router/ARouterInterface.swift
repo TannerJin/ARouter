@@ -24,4 +24,8 @@ extension ARouter {
     @objc func isLoginSuccess(param1: Int, param2: [String: Any]?) -> Bool {
         return param1 > 965
     }
+    
+    @objc func passBlockParam(_ block: ([Int])->String) -> String {
+        return block([1, 0, 2, 4])
+    }
 }
