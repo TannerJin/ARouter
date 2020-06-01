@@ -16,21 +16,23 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .green
-        self.title = "Login"
     }
 
     @IBAction func LoginSuccessClick(_ sender: UIButton) {
-        ARouter.default.enterUserInfo?(withUserName: "Tanner Jin", navi: self.navigationController)
+        if let userController = ARouter.shared.performTarget("UserInfoModule.UserInfoViewController")?.enterUserInfo(withUserName: "Tanner.Jin") {
+            navigationController?.pushViewController(userController, animated: true)
+        }
     }
 }
 
 extension LoginViewController {
-    class func isLoginSuccess(param1: Int, param2: [String: Any]?) -> Bool {
+    @objc func isLoginSuccess(param1: Int, param2: [String: Any]?) -> Bool {
         return param1 > 1024
     }
     
-    class func enterLogin(navi: UINavigationController) -> LoginViewController {
+    @objc func enterLogin(navi: UINavigationController, param1: Int, param2: String) -> LoginViewController {
         let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
+        loginController.title = param2 + "\(param1)"
         navi.pushViewController(loginController, animated: true)
         return loginController
     }

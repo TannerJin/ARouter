@@ -17,9 +17,9 @@ class UserInfoViewController: UIViewController {
 }
 
 extension UserInfoViewController {
-    class func enterUserInfo(withUserName userName: String, navi: UINavigationController?) {
+    @objc func enterUserInfo(withUserName userName: String) -> UIViewController {
         let userController = UserInfoViewController()
         userController.title = userName
-        navi?.pushViewController(userController, animated: true)
+        return userController
     }
 }

@@ -16,30 +16,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    // MARK: - 直接调用
     @IBAction func loginClick(_ sender: UIButton) {
-        if let navigationController = self.navigationController {
-            ARouter.default.enterLogin?(navi: navigationController)
+        if let navi = self.navigationController {
+            _ = ARouter.shared.performTarget("LoginRegisterModule.LoginViewController")?.enterLogin(navi: navi, param1: 1024, param2: "Hello")
+        }
+        
+        // 带返回值
+        if let isLogin = ARouter.shared.performTarget("LoginRegisterModule.LoginViewController")?.isLoginSuccess(param1: 2000, param2: nil) {
+            print(isLogin ? "登录成功":"登录失败")
         }
     }
     
     @IBAction func registerClick(_ sender: UIButton) {
-        ARouter.default.enterRegister?(controller: self)
+        ARouter.shared.performTarget("LoginRegisterModule.RegisterViewController")?.enterRegister(controller: self)
     }
     
+    // MARK: - 通过ARouter间接调用
     @IBAction func loginStatuClick(_ sender: UIButton) {
-        // 带返回值
-        if let isLogin = ARouter.default.isLoginSuccess?(param1: 996, param2: nil) {
-            print(isLogin ? "登录成功":"登录失败")
-        }
-        
-        // block传参
         let str = ARouter.default.passBlockParam { (arr) -> String in
             return arr.map{String($0)}.joined()
         }
         print(str)
-        
-        // 通过字符串调用
-        ARouter.shared.performAction("stringSeletorAction:", with: ["name": "张三"])
     }
     
     // 404处理

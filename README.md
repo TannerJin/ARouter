@@ -3,45 +3,66 @@
 > Swift Router
 >
 > Inspired from [CTMediator](https://github.com/casatwy/CTMediator)    
-> 但不同于`CTMediator`, `extension  ARouter`会在当前的模块对外入口耦合一些当前模块的调用（但模块与模块没有耦合性的，这是主要目的）
+
 
 Different with [SRouter](https://github.com/TannerJin/SRouter), It's Based On `RunTime of AnyObject`
 
 ## Usage
 
-```swift
-/* At Login Moudle
-*/
+* user case 1
 
+```swift
+/* At LoginRegister Module
+*/
 class LoginViewController: UIViewController {
-     class func enterLogin(navi: UINavigationController) -> LoginViewController {
-        let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
-        navi.pushViewController(loginController, animated: true)
-        return loginController
+     @objc func enterLogin(navi: UINavigationController, param1: Int, param2: String) -> LoginViewController {
+         let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
+         loginController.title = param2 + "\(param1)"
+         navi.pushViewController(loginController, animated: true)
+         return loginController
+     }
+}   
+
+
+/* At Any Moudle (don't need import LoginRegister Module)
+*/
+@objc protocol AnyMoudleUsedRouteTable {
+    @objc func enterLogin(navi: UINavigationController, param1: Int, param2: String) -> UIViewController
+}
+
+_ = ARouter.shared.performTarget("LoginRegisterModule.LoginViewController")?.enterLogin(navi: navigationController, param1: 1024, param2: "Hello")
+```
+
+* use case 2
+
+```swift
+/* At LoginRegister Module
+*/
+class LoginViewController: UIViewController {
+    class func isLoginSuccess(param1: [String: Any], param2: Int) -> Bool {
+        return param2 > 1024
     }
 }
 
 extension ARouter {
-    @objc func enterLogin(navi: UINavigationController) -> UIViewController {
-        return LoginViewController.enterLogin(navi: navi)
-    }
-    
     @objc func isLoginSuccess(param1: [String: Any], param2: Int) -> Bool {
-        ...
-        return param2 > 007
+        return LoginViewController.isLoginSuccess(param1: param1, param2: param2)
     }
- }   
+}
 
-
-/* At Any Moudle (don't need import LoginMoudle)
+/* At Any Moudle (don't need import LoginRegister Module)
 */
-
-ARouter.default.enterLogin?(navi: navigationController)
+@objc protocol AnyMoudleUsedRouteTable {
+    @objc func isLoginSuccess(param1: [String: Any], param2: Int) -> Bool
+}
 
 if let result = ARouter.default.isLoginSuccess?(param1: [:], param2: 996), result == true {
     print("Login Success")
 }
 ```
+
+> use case 2中， `extension ARouter`会在当前的模块对外入口耦合一些当前模块的调用（但模块与模块没有耦合性的，这是主要目的）
+
 
 #### note
 

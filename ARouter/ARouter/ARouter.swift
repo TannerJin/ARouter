@@ -19,39 +19,13 @@ public class ARouter: NSObject {
     
     private override init() {}
     
-    @discardableResult
-    public func performAction(_ aSelectorName: String, with params: [String: Any]) -> Unmanaged<AnyObject>? {
-        func foundSeletor(at class: AnyClass) -> Selector? {
-            var count: UInt32 = 0
-            var selector: Selector!
-            if let methods = class_copyMethodList(ARouter.self, &count) {
-                defer {
-                    methods.deallocate()
-                }
-                for i in 0..<count {
-                    selector = method_getName(methods[Int(i)])
-                    let selectorName = NSStringFromSelector(selector)
-                    if selectorName == aSelectorName {
-                        break
-                    }
-                }
-            }
-            return selector
+    // TODO: 优化这种使用方式
+    public func performTarget(_ className: String) -> AnyObject? {
+        if let objcClass = NSClassFromString(className) as? NSObject.Type {
+            return objcClass.init()
         }
-    
-        var aSelector = NSSelectorFromString(aSelectorName)
-
-        if let selector = foundSeletor(at: ARouter.self) {
-            aSelector = selector
-        } else if let selector = foundSeletor(at: ARouterForwarding.self) {
-            aSelector = selector
-        }
-        return self.perform(aSelector, with: params)
-    }
-    
-    // TODO
-    public func performUrl() {
-        
+        assert(false, "\(className) is not class or subClass of NSObject")
+        return nil
     }
 }
 
