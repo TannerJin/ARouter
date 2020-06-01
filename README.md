@@ -9,13 +9,11 @@ Different with [SRouter](https://github.com/TannerJin/SRouter), It's Based On `R
 
 ## Usage
 
-* __user case 1__
-
 ```swift
 /* At LoginRegister Module
 */
 class LoginViewController: UIViewController {
-     @objc func enterLogin(navi: UINavigationController, param1: Int, param2: String) -> LoginViewController {
+     @objc class func enterLogin(navi: UINavigationController, param1: Int, param2: String) -> LoginViewController {
          let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
          loginController.title = param2 + "\(param1)"
          navi.pushViewController(loginController, animated: true)
@@ -32,39 +30,6 @@ class LoginViewController: UIViewController {
 
 _ = ARouter.shared.performTarget("LoginRegisterModule.LoginViewController")?.enterLogin(navi: navigationController, param1: 1024, param2: "Hello")
 ```
-
-> use case 1中，通过“performTarget”调用，target得是NSObject子类，并且内部没有自定义`init`方法
-
-* __use case 2__
-
-```swift
-/* At LoginRegister Module
-*/
-class LoginViewController: UIViewController {
-    class func isLoginSuccess(param1: [String: Any], param2: Int) -> Bool {
-        return param2 > 1024
-    }
-}
-
-extension ARouter {
-    @objc func isLoginSuccess(param1: [String: Any], param2: Int) -> Bool {
-        return LoginViewController.isLoginSuccess(param1: param1, param2: param2)
-    }
-}
-
-/* At Any Moudle (don't need import LoginRegister Module)
-*/
-@objc protocol AnyMoudleUsedRouteTable {
-    @objc func isLoginSuccess(param1: [String: Any], param2: Int) -> Bool
-}
-
-if let result = ARouter.default.isLoginSuccess?(param1: [:], param2: 996), result == true {
-    print("Login Success")
-}
-```
-
-> use case 2中，没有上面use case 1的使用限制. 但是 `extension ARouter`会在当前的模块对外入口耦合一些当前模块的调用（但模块与模块没有耦合性的，这是主要目的）
-
 
 #### note
 

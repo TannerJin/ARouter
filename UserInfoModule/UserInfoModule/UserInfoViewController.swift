@@ -9,7 +9,6 @@
 import UIKit
 
 class UserInfoViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
@@ -17,7 +16,7 @@ class UserInfoViewController: UIViewController {
 }
 
 extension UserInfoViewController {
-    @objc func enterUserInfo(withUserName userName: String) -> UIViewController {
+    @objc class func enterUserInfo(withUserName userName: String) -> UIViewController {
         let userController = UserInfoViewController()
         userController.title = userName
         return userController

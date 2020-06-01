@@ -19,18 +19,14 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func LoginSuccessClick(_ sender: UIButton) {
-        if let userController = ARouter.shared.performTarget("UserInfoModule.UserInfoViewController")?.enterUserInfo(withUserName: "Tanner.Jin") {
+        if let userController = ARouter.default.performTarget("UserInfoModule.UserInfoViewController")?.enterUserInfo(withUserName: "Tanner.Jin") {
             navigationController?.pushViewController(userController, animated: true)
         }
     }
 }
 
 extension LoginViewController {
-    @objc func isLoginSuccess(param1: Int, param2: [String: Any]?) -> Bool {
-        return param1 > 1024
-    }
-    
-    @objc func enterLogin(navi: UINavigationController, param1: Int, param2: String) -> LoginViewController {
+    @objc class func enterLogin(navi: UINavigationController, param1: Int, param2: String) -> LoginViewController {
         let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
         loginController.title = param2 + "\(param1)"
         navi.pushViewController(loginController, animated: true)

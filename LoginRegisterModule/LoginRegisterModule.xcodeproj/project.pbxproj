@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		A925EEC2247EC4900076EA15 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925EEC0247EC4900076EA15 /* LoginViewController.swift */; };
 		A925EEC3247EC4900076EA15 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A925EEC1247EC4900076EA15 /* LoginViewController.xib */; };
+		A9275ABE24854A8300A15C72 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9275ABD24854A8300A15C72 /* LoginManager.swift */; };
 		A9F86648247EA4E600402672 /* LoginRegisterModule.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F86646247EA4E600402672 /* LoginRegisterModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9F8666E247EA5FF00402672 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8666D247EA5FF00402672 /* RegisterViewController.swift */; };
-		A9F86670247EA62500402672 /* ARouterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8666F247EA62500402672 /* ARouterInterface.swift */; };
 		A9F86673247EA63600402672 /* ARouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F86672247EA63600402672 /* ARouter.framework */; };
 		A9F86674247EA63600402672 /* ARouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9F86672247EA63600402672 /* ARouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9F8668A247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86689247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift */; };
@@ -34,11 +34,11 @@
 /* Begin PBXFileReference section */
 		A925EEC0247EC4900076EA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A925EEC1247EC4900076EA15 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A9275ABD24854A8300A15C72 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		A9F86643247EA4E600402672 /* LoginRegisterModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoginRegisterModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F86646247EA4E600402672 /* LoginRegisterModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRegisterModule.h; sourceTree = "<group>"; };
 		A9F86647247EA4E600402672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9F8666D247EA5FF00402672 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		A9F8666F247EA62500402672 /* ARouterInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARouterInterface.swift; sourceTree = "<group>"; };
 		A9F86672247EA63600402672 /* ARouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ARouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F86689247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterModuleUsedRouteTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +81,7 @@
 				A9F8666D247EA5FF00402672 /* RegisterViewController.swift */,
 				A925EEC0247EC4900076EA15 /* LoginViewController.swift */,
 				A925EEC1247EC4900076EA15 /* LoginViewController.xib */,
+				A9275ABD24854A8300A15C72 /* LoginManager.swift */,
 			);
 			path = LoginRegisterModule;
 			sourceTree = "<group>";
@@ -96,7 +97,6 @@
 		A9F8668B247EAB2300402672 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				A9F8666F247EA62500402672 /* ARouterInterface.swift */,
 				A9F86689247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift */,
 			);
 			path = Router;
@@ -184,10 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9275ABE24854A8300A15C72 /* LoginManager.swift in Sources */,
 				A925EEC2247EC4900076EA15 /* LoginViewController.swift in Sources */,
 				A9F8666E247EA5FF00402672 /* RegisterViewController.swift in Sources */,
 				A9F8668A247EAA1B00402672 /* LoginRegisterModuleUsedRouteTable.swift in Sources */,
-				A9F86670247EA62500402672 /* ARouterInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

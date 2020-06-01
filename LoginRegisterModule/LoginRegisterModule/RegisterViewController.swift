@@ -18,7 +18,7 @@ class RegisterViewController: UIViewController {
 }
 
 extension RegisterViewController {
-    @objc func enterRegister(controller: UIViewController) {
+    @objc class func enterRegister(controller: UIViewController) {
         let navi = UINavigationController(rootViewController: RegisterViewController())
         controller.present(navi, animated: true, completion: nil)
     }

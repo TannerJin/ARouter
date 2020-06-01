@@ -16,8 +16,5 @@ import UIKit
     
     @objc func enterRegister(controller: UIViewController)
     
-    // 由于加了@objc, 在生成SIL代码时，编译器会将你的block变成@convention(block)类型使用
-    @objc func passBlockParam(_ block: ([Int])->String) -> String
-    
-    @objc func undefineSelect(param1: String, param2: Int)
+    @objc func undefineSelect(param1: String, param2: Int)    
 }
