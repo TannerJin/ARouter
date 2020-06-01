@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
 _ = ARouter.shared.performTarget("LoginRegisterModule.LoginViewController")?.enterLogin(navi: navigationController, param1: 1024, param2: "Hello")
 ```
 
+> use case 1中，通过“performTarget”调用，target得是NSObject子类，并且内部没有自定义`init`方法
+
 * __use case 2__
 
 ```swift
@@ -61,7 +63,7 @@ if let result = ARouter.default.isLoginSuccess?(param1: [:], param2: 996), resul
 }
 ```
 
-> use case 2中， `extension ARouter`会在当前的模块对外入口耦合一些当前模块的调用（但模块与模块没有耦合性的，这是主要目的）
+> use case 2中，没有上面use case 1的使用限制. 但是 `extension ARouter`会在当前的模块对外入口耦合一些当前模块的调用（但模块与模块没有耦合性的，这是主要目的）
 
 
 #### note
