@@ -2,7 +2,8 @@
 
 > Swift Router
 >
-> Inspired from [CTMediator](https://github.com/casatwy/CTMediator) 
+> Inspired from [CTMediator](https://github.com/casatwy/CTMediator)    
+> 但不同于`CTMediator`, `extension  ARouter`会在当前的模块对外入口耦合一些当前模块的调用（但模块与模块没有耦合性的，这是主要目的）
 
 Different with [SRouter](https://github.com/TannerJin/SRouter), It's Based On `RunTime of AnyObject`
 
