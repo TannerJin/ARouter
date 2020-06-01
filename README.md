@@ -12,10 +12,17 @@ Different with [SRouter](https://github.com/TannerJin/SRouter), It's Based On `R
 /* At Login Moudle
 */
 
-extension ARouter {
-    @objc func enterLogin(navi: UINavigationController) {
+class LoginViewController: UIViewController {
+     class func enterLogin(navi: UINavigationController) -> LoginViewController {
         let loginController = LoginViewController(nibName: "LoginViewController", bundle: Bundle(for: LoginViewController.self))
         navi.pushViewController(loginController, animated: true)
+        return loginController
+    }
+}
+
+extension ARouter {
+    @objc func enterLogin(navi: UINavigationController) -> UIViewController {
+        return LoginViewController.enterLogin(navi: navi)
     }
     
     @objc func isLoginSuccess(param1: [String: Any], param2: Int) -> Bool {
