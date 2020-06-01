@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A925EEC62480B3330076EA15 /* ARouterForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925EEC52480B3330076EA15 /* ARouterForwarding.swift */; };
 		A9F86633247EA4A200402672 /* ARouter.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F86631247EA4A200402672 /* ARouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9F8666A247EA57700402672 /* ARouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86669247EA57700402672 /* ARouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A925EEC52480B3330076EA15 /* ARouterForwarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARouterForwarding.swift; sourceTree = "<group>"; };
 		A9F8662E247EA4A200402672 /* ARouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F86631247EA4A200402672 /* ARouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARouter.h; sourceTree = "<group>"; };
 		A9F86632247EA4A200402672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +51,6 @@
 				A9F86631247EA4A200402672 /* ARouter.h */,
 				A9F86632247EA4A200402672 /* Info.plist */,
 				A9F86669247EA57700402672 /* ARouter.swift */,
-				A925EEC52480B3330076EA15 /* ARouterForwarding.swift */,
 			);
 			path = ARouter;
 			sourceTree = "<group>";
@@ -139,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F8666A247EA57700402672 /* ARouter.swift in Sources */,
-				A925EEC62480B3330076EA15 /* ARouterForwarding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
